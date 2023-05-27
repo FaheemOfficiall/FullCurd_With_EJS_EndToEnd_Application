@@ -1,0 +1,32 @@
+<%- include ('./partials/header.ejs') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 mt-5">
+                <h2 class="alert alert-heading text-center">Update Student Details</h2>
+                <form action="/student/update/<%= result.id%>" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" id="name" class="form-control" value="<%= result.name%>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="text" name="age" id="age" class="form-control" value="<%= result.age%>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="class" class="form-label">Fees</label>
+                        <input type="text" name="fees" id="fees" class="form-control" value="<%= result.fees%>">
+
+                    </div>
+
+                    <button type="submit" class="btn btn-warning m-1">Update Here</button>
+                    <button type="submit" class="btn btn-success">Back To Home</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include ('./partials/header.ejs') %>

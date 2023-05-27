@@ -1,0 +1,92 @@
+<%- include ('./partials/header.ejs') %>
+
+<h1 class="text-center mb-4 mt-3 text-danger">WellCome To Yousufiya High School Student DataBase</h1>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-6 mt-5">
+                <h2 class="alert alert-success text-center">Add New Student</h2>
+            <form action="" method="post">
+<div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" name="name" id="name" class="form-control">
+</div>
+<div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input type="text" name="age" id="age" class="form-control">
+</div>
+<div class="mb-3">
+    <label for="class" class="form-label">Fees</label>
+    <input type="text" name="fees" id="fees" class="form-control">
+
+</div>
+
+<!-- <button type="submit" class="btn btn prrimary">Submit Here</button> -->
+<button type="submit" class="btn btn-primary">Submit Here</button>
+
+            </form>
+        </div>
+
+            <div class="col-sm-6 mt-5">
+                <h2 class="alert alert-info text-center">List Of Student</h2>
+                <%# Show All Data %>
+                <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">no</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Fees</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% var i=1 %>
+                    <% data.forEach((item)=>{%>
+                        <tr>
+                            <td> <%=i++ %></td>
+                            <td><%=item.name %></td>
+                            <td> <%=item.age %> </td>
+                            <td> <%=item.fees %> </td>
+                            <td>
+                                <!-- <i class="fas fa-pen-square text-info"></i> -->
+                                <form action="/student/edit/<%= item.id%>"  method="get" class="d-inline">
+                                    <button class="btn btn-primary">
+                                    <i class="fas fa-pen-square text-light">Update</i>
+
+                                </button>
+
+                                </form>
+                                <form action="/student/delete/<%= item.id%>" method="post" class="d-inline">
+                                    <button class="btn btn-warning">
+                                        <i class="fa-solid fa-trash">Delete</i>
+                                    </button>
+                                   
+                                </form>
+                               
+    
+                            </td>
+                        </tr>
+                   <% })%>
+                    
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include ('./partials/header.ejs') %>
+
+
+
+
+
+
+
+
+
+
+ 
